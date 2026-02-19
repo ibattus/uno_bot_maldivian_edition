@@ -173,8 +173,8 @@ class Player(object):
             self.logger.debug("Player has to draw and can't counter")
             is_playable = False
         elif (last.special == c.DRAW_FOUR) and \
-                (card.special == c.CHOOSE):
-            self.logger.debug("Can't play colorchooser if draw 4 played")
+                (card.special == c.CHOOSE) and self.game.draw_counter:
+            self.logger.debug("Can't play colorchooser if draw 4 played and draw_counter active")
             is_playable = False
         elif (last.special == c.DRAW_FOUR) and not \
                 (card.special == c.DRAW_FOUR) and self.game.draw_counter:

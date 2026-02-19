@@ -55,7 +55,7 @@ def do_skip(bot, player, job_queue=None):
                         "been reduced to {time} seconds.\n"
                         "Next player: {name}", multi=game.translate)
                    .format(time=n,
-                           name=display_name(next_player.user))
+                           name=display_name(next_player.user)),
                    reply_markup=InlineKeyboardMarkup(choice)
         )
         logger.info("{player} was skipped! "
